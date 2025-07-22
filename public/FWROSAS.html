@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>FW ROSES plantilla</title>
+<!--aca se insertan todos los links eexperiores que se van inpleementar en nuestro dom -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+     <script src="https://unpkg.com/vue@3"></script>
+     <link rel="stylesheet" href="FWROSAS.css">
+     <script src="FWROSAS.js" defer></script>
+</head>
+
+
+<!-- CONTENEDOR PRINCIPAL/ACA VA TODO EL DOM -->
+<div id="app">
+
+
+<!-- CABECERA-->
+     <header class="header"> 
+
+
+<!-- ICONOS DE REDES-->
+    <div class="iconos">
+      <a href="https://www.instagram.com/direct/inbox/"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://mx.pinterest.com/pin/11188699073993677/"><i class="fa-brands fa-pinterest"></i></a>
+    </div>
+
+
+<!--LOGO-->
+      <h1 @click="seccion = 'inicio'" style="cursor: pointer;" title="Ir al inicio">FW ROSAS</h1>
+        <!-- aca @click esta llamando la variable con una clave "seccion" y un valor en string "inicio"
+             esto quiere decir que al hacer clic en el logo "FWROSAS" @click llamara la variable "inicio" por medio de vue.js
+             y ocultara la seccion en donde estemos y nos mostrara la seccion "inicio" (por que es la variable que queremos llamar)
+             VARIABLE seccion='inicio' -->
+
+
+<!--CARRITO-->
+    <a href="#" id="carrito" @click.prevent="goToCart">
+      <!--bueno aca se pone @click.PREVENT por que el PREVENT ehace que quite las acciones predeterminadas de HHTML y que se haga lo que queremos
+      pero atraves de VUE.JS basicamente -->
+
+      <i class="fa-solid fa-cart-shopping"></i>
+      
+      {{ cart.length }}
+      
+    </a>
+     </header>
+
+
+<!-- MENÚ DE NAVEGACIÓN-->
+     <nav class="menu">
+      <a @click="seccion = 'inicio'">INICIO</a>
+      <!--aca basicamente es todo lo que dijimos anteriormente sobre @click en esta ocacion
+      esta llamando una variable  -->
+      <a @click="seccion = 'tienda'">TIENDA</a>
+      <a @click="changeSection('acerca')">ACERCA DE
+      <!--aca esta llamando una function-->
+      </a>
+      <a @click="seccion = 'contacto'">CONTACTO</a>
+      <a @click="changeSection('diario')">DIARIO</a>
+     </nav>
+
+
+<!-- PAGINA PRINCIPAL-->
+     <div v-if="seccion === 'inicio'" class="home">
+      <!-- para que vue.js funcione debemos de encerrar cada seccion o en este caso CADA CONTENIDO DE LAS VAGINAS(variables)
+       home hace referencia -->
+<!-- MAIN- IAMGEN HERO-->
+     <main class="main">
+     <div class="hero">
+       <img src="https://i.pinimg.com/474x/98/8c/ee/988ceea3bde1a924750a14b501899b40.jpg" alt="fondo">
+     <div class="texto-sobre-imagen">
+       <h4>Nueva Colección</h4>
+       <h2>Universal – <a @click="seccion = 'tienda'" id="main-button">COMPRAR AHORA</a>
+       </h2>
+     </div>
+     </div>
+     </main>
+<!-- SEECCIONES ADICIONELES (seection 2,3,4,5,) SE MANTIENEN EN EL DIV DE "HOME"-->
+     <section class="section-2">
+    <div class="texto-bottun">
+        <p> ✨ "La moda no tiene reglas, solo actitud. Viste lo que amas, siéntete poderosa 
+               y muestra al mundo tu esencia. <br>Porque cada prenda que eliges es una declaración 
+                de confianza y libertad." ✨ </p>
+                <a @click="seccion = 'acerca'"class="btn-outline"> Nuestra Historia</a>
+    </div>
+        <div class="imagenes-section2">
+            <img src="https://i.pinimg.com/474x/08/f6/7a/08f67aa34131d434e56c3e290c357eec.jpg" alt="mujer">
+            <img src="https://i.pinimg.com/474x/d2/ed/b3/d2edb3017e338aecf471c3c00cb16ec8.jpg" alt="chita">
+        </div>
+     </section>
+
+     <section class="section-3">
+    <div id="texto-button3">
+        <h2>"Vístete sin reglas, siéntete sin límites." ✨🔥</h2>
+        <a @click="seccion = 'tienda'"class="btn-outline">Colecciones</a>
+    </div>
+
+    <div class="imagenes-section-3">
+        <img src="https://i.pinimg.com/474x/3a/f6/b6/3af6b668167ac5f9608dcc3890563f70.jpg" alt="mucamas">
+        <img src="https://i.pinimg.com/474x/2a/67/d6/2a67d65ab8885a460462bfb1b96422b3.jpg" alt="Anillo Ketey">
+    </div>
+
+     </section>
+
+     <section class="section-4">
+    <div class="hero-2">
+      
+      <!-- Texto sobre la imagen -->
+      <div class="texto-sobre-imagen-2">
+        <h2>Piezas sencillas, estilo atemporal</h2>
+        <p>
+          Diseñamos cada una de nuestras colecciones con la intención de crear piezas que puedan pasarse de generación en generación para generar pocos residuos y una mínima huella de carbono.
+        </p>
+        <a @click="seccion = 'tienda'" class="btn-outline">Comprar ahora</a>
+      </div>
+  
+      <!-- Imagen flotante a la derecha -->
+      <div class="imagen-flotante">
+        <img src="https://i.pinimg.com/474x/5a/31/0a/5a310a6034af9122d615653be88764e2.jpg" alt="Anillo Ketey">
+        <div class="descripcion">
+          <p>Collar Jason</p>
+          <p>195,00 €</p>
+          <p>Collares</p>
+        </div>
+      </div>
+    </div>
+     </section>
+
+     <section class="section-5">
+
+     <div class="newsletter-container">
+    
+    <!-- Contenedor para el texto a la izquierda -->
+    <div class="newsletter-text">
+      <h2>Newsletter</h2>  <!-- Título: Se destaca y se coloca en la parte izquierda -->
+      <p>
+        Entérate de los lanzamientos de nuevas colecciones,<br>
+        ofertas especiales y otras novedades antes que nadie.
+      </p>  <!-- Párrafo: Aparece justo debajo del título -->
+    </div>
+    <!-- Contenedor para el formulario a la derecha -->
+    <div class="input-subs">
+      <form action="#" method="post">
+        <input type="email" placeholder="Correo electrónico">  <!-- Campo de entrada: Caja más grande para escribir -->
+        <button type="submit">Suscribirse</button>  <!-- Botón: Más prominente y estilizado -->
+      </form>
+    </div>
+     </div>
+     <hr class="divider">
+     <div class="imagenes-section5">
+    <img src="https://i.pinimg.com/474x/01/24/6f/01246f610869559988dfe70a89fe8a24.jpg" alt="anillo">
+    <img src="https://i.pinimg.com/736x/f2/13/96/f213967276315547527d60f0d8d207b5.jpg" alt="vestido-de-baño">
+    <img src="https://i.pinimg.com/474x/65/0a/85/650a85f32e40af1eaf5b8b9014a26801.jpg" alt="mar">
+    <img src="https://i.pinimg.com/474x/7a/6f/ec/7a6fecf5f856a30e76790ffa4e0bdbd5.jpg" alt="pilota">
+     </div>
+     <hr class="divider">
+     </section>
+     </div>
+
+
+
+<!-- SECCION TIENDA DINAMINCA -->
+     <section id="tienda-dinamica" class="section" v-if="seccion === 'tienda'" :class="{ active: currentSection==='tienda' }">
+      
+      <!-- Botón para volver a Home -->
+      <h2>Tienda</h2>
+      <!-- Submenú de categorías -->
+      <div class="categorias">
+        <a href="#" @click.prevent="changeCategory('playeras')">Playeras</a>
+        <a href="#" @click.prevent="changeCategory('zapatos')">Zapatos</a>
+        <a href="#" @click.prevent="changeCategory('verano')">Verano</a>
+        <a href="#" @click.prevent="changeCategory('accesorios')">Accesorios</a>
+      </div>
+
+      <!-- Divisiones de categorías, se muestran según currentCategory -->
+
+      <div id="categoria-playeras" class="categoria" v-show="currentCategory==='playeras'">
+        <h3>Playeras</h3>
+        <div class="productos-grid">
+          <div class="producto" v-for="(producto, index) in productos.playeras" :key="'playeras-'+index">
+            <img :src="producto.img" :alt="producto.nombre">
+            <h3>{{ producto.nombre }}</h3>
+            <p>{{ producto.precio }},00 €</p>
+            <button class="btn-outline"
+              @click="addToCart(producto)">
+              <i class="fa-solid fa-cart-shopping"></i> {{ getCantidad(producto.nombre) }}
+            </button>
+          </div>
+        </div>
+      </div>
+      
+
+      <div id="categoria-zapatos" class="categoria" v-show="currentCategory==='zapatos'">
+        <h3>Zapatos</h3>
+        <div class="productos-grid">
+          <div class="producto" v-for="(producto, index) in productos.zapatos" :key="'zapatos-'+index">
+            <img :src="producto.img" :alt="producto.nombre">
+            <h3>{{ producto.nombre }}</h3>
+            <p>{{ producto.precio }},00 €</p>
+            <button class="btn-outline"
+              @click="addToCart(producto)">
+              <i class="fa-solid fa-cart-shopping"></i> {{ getCantidad(producto.nombre) }}
+            </button>
+          </div>
+        </div>
+      </div>
+      
+
+      <div id="categoria-verano" class="categoria" v-show="currentCategory==='verano'">
+        <h3>Verano</h3>
+        <div class="productos-grid">
+          <div class="producto" v-for="(producto, index) in productos.verano" :key="'verano-'+index">
+            <img :src="producto.img" :alt="producto.nombre">
+            <h3>{{ producto.nombre }}</h3>
+            <p>{{ producto.precio }},00 €</p>
+            <button class="btn-outline"
+              @click="addToCart(producto)">
+              <i class="fa-solid fa-cart-shopping"></i> {{ getCantidad(producto.nombre) }}
+            </button>
+          </div>
+        </div>
+      </div>
+      
+
+      <div id="categoria-accesorios" class="categoria" v-show="currentCategory==='accesorios'">
+        <h3>Pulseras</h3>
+        <div class="productos-grid">
+          <div class="producto" v-for="(producto, index) in productos.accesorios" :key="'accesorios-'+index">
+            <img :src="producto.img" :alt="producto.nombre">
+            <h3>{{ producto.nombre }}</h3>
+            <p>{{ producto.precio }},00 €</p>
+            <button class="btn-outline"
+              @click="addToCart(producto)">
+              <i class="fa-solid fa-cart-shopping"></i> {{ getCantidad(producto.nombre) }}
+            </button>
+          </div>
+        </div>
+      </div>
+      
+
+     </section>
+
+
+
+<!-- SECCION DIARIO(se muestra cuando ninguna entrada está seleccionada) -->
+     <section v-if="seccion === 'diario' && entradaActual === null" style="padding: 2rem; background-color: #f6f3ef;">
+
+     <div style="display: flex; justify-content: space-around; gap: 1rem; flex-wrap: wrap;">
+     <div v-for="(entrada, index) in entradas" :key="index" style="flex: 1 1 30%; text-align: center; margin-bottom: 2rem;">
+    <!-- Se reduce el tamaño de las imágenes (por ejemplo, al 40% de ancho) -->
+      <img :src="entrada.img" @click="verEntrada(index)" style="width: 50%; height: auto; cursor: pointer; border-radius: 4px;">
+      <p style="margin: 0.5rem 0; font-size: 0.75rem; color: #555;">{{ entrada.fecha }}</p>
+    <!-- Se utiliza un tamaño de fuente intermedio para los títulos -->
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin: 0.5rem 0;">{{ entrada.titulo }}</h2>
+     </div>
+     </div>
+
+<section v-if="entradaActual !== null" style="padding: 2rem; background-color: #f6f3ef;">
+<!-- Condicional para la entrada "Producto local" -->
+     <div v-if="entradas[entradaActual].titulo === 'Producto local'">
+    <!-- Título centrado encima de la imagen -->
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">
+      {{ entradas[entradaActual].titulo }}
+    </h1>
+<!-- Contenedor Flex para imagen y primera mitad del texto -->
+    <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+<!-- Columna de la imagen -->
+     <div style="flex: 0 0 40%; display: flex; justify-content: center;">
+        <img 
+          :src="entradas[entradaActual].img" 
+          alt="Producto local"
+          style="width: 100%; max-width: 300px; height: auto; border-radius: 5px;"
+        >
+     </div>
+<!-- Columna de la primera mitad del texto -->
+     <div style="flex: 1; min-width: 250px;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 1.25rem; line-height: 1.8; color: #444;">
+          <!-- Primera mitad del contenido (ajusta el texto como consideres) -->
+          Descubre la fuerza que nace de lo nuestro. En cada prenda, en cada detalle, celebramos la autenticidad y el talento local. Nuestro producto local es más que una moda: es un homenaje a la creatividad y resiliencia de mujeres que han sabido transformar su entorno en piezas únicas.
+          Cada diseño está pensado para resaltar la belleza natural y la fortaleza interior, invitándote a empoderarte y a sentirte única. Al vestir nuestra ropa, abrazas una filosofía de vida que prioriza la sostenibilidad, la responsabilidad y el apoyo a la producción local. Es el resultado 
+          de un proceso creativo arraigado en la pasión y el compromiso de mujeres emprendedoras que transforman el mundo a través de la moda consciente. Permítete ser parte de este movimiento que celebra la diversidad, la cultura y la innovación, y viste con orgullo, pasión y la certeza de que cada prenda local es un paso hacia un futuro mejor.
+        </p>
+     </div>
+     </div>
+<!-- Bloque para la segunda mitad del texto, a pantalla completa debajo -->
+     <div style="max-width: 800px; margin: 2rem auto 0 auto;">
+      <p style="font-family: 'Playfair Display', serif; font-size: 1.25rem; line-height: 1.8; color: #444;">
+        <!-- Segunda mitad del contenido (ajusta el texto completo e inspirador que desees) -->
+        Es un tributo a las raíces que nutren nuestra identidad y dan fuerza a cada mujer.<br>
+        Forjada con pasión por artesanas que transforman lo local en auténtico arte.<br>
+        Cada corte, cada textura y cada detalle evoca los paisajes y la calidez de nuestro entorno.<br>
+        Una invitación a reconectar con la esencia de lo natural y vivir con autenticidad.<br>
+        El diseño celebra la fusión entre tradición y modernidad, empoderando a quienes lo visten.<br>
+        Es una manifestación de resiliencia y creatividad, un himno a la diversidad cultural.<br>
+        Con cada prenda, abrazas un estilo consciente y sostenible, reflejo de un futuro mejor.<br>
+        Vístete con orgullo, dejando que tu apariencia cuente una historia de empoderamiento.<br>
+        Porque elegir lo local significa honrar la tierra y impulsar un cambio lleno de posibilidades.
+        </p>
+      </p>
+      
+      <!-- Botón "Regresar a Diario" -->
+     <div style="text-align: left; margin-top: 2rem;">
+        <button 
+          @click="entradaActual = null" 
+          class="btn-outline"
+          style="padding: 0.75rem 1.5rem; border: 2px solid black; background: transparent; color: black; font-family: 'Playfair Display', serif; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 1rem;">
+          Regresar a Diario
+        </button>
+     </div>
+     </div>
+     </div>
+<!-- Vista Diario Detallada para "Colección Universal" -->
+     <div v-else-if="entradas[entradaActual].titulo === 'Colección Universal'">
+<!-- Título centrado encima -->
+<h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">
+{{ entradas[entradaActual].titulo }}
+</h1>
+
+<!-- Contenedor Flex para imagen y contenido inspirador a lado -->
+     <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; max-width: 1200px; margin: 0 auto;">
+<!-- Columna para la imagen centrada -->
+<div style="flex: 0 0 40%; display: flex; justify-content: center;">
+  <img 
+    :src="entradas[entradaActual].img" 
+    alt="Colección Universal"
+    style="width: 100%; max-width: 300px; height: auto; border-radius: 5px;"
+  >
+     </div>
+<!-- Columna para la primera parte del texto inspirador -->
+     <div style="flex: 1 1 50%; min-width: 250px;">
+  <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.8; color: #444; margin-bottom: 1rem;">
+    Descubre la esencia de la moda global a través de Colección Universal.<br>
+    Cada diseño fusiona tradición y modernidad, creando un puente entre culturas.<br>
+    Una invitación a explorar la belleza sin fronteras.En cada prenda se esconde un susurro del viento que recorre los rincones del mundo,<br>
+    una historia de encuentros, de almas que se funden en un abrazo eterno.<br>
+    La luz del amanecer se mezcla con la magia del crepúsculo en cada detalle,<br>
+    tejiendo sueños y pasiones que trascienden el tiempo y el espacio.<br>
+    Cada costura es el lazo de un compromiso sincero con la belleza y la vida,<br>
+    un homenaje a la diversidad y a la fuerza que transforma lo ordinario en extraordinario.<br>
+    Aquí, en esta colección, se celebra la unión de culturas y el arte de reinventarse,<br>
+    invitándote a vestirte con la esencia de un universo en constante renovación.<br>
+    Deja que cada prenda te inspire a descubrir tu historia y a volar con la imaginación.<br>
+    Siente la emoción de un destino que se escribe con cada paso y cada mirada.
+  </p>
+     </div>
+     </div>
+<!-- Bloque para la segunda parte del texto que se extiende a lo ancho, sin afectar el diseño de "Producto local" -->
+     <div style="max-width: 800px; margin: 2rem auto 0 auto;">
+<p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.8; color: #444;">
+  Inspirada en la diversidad del mundo, cada prenda narra una historia única. Detalles minuciosos y materiales selectos celebran la riqueza cultural, rindiendo homenaje a nuestras raíces. Permítete soñar, explorar y descubrir un estilo que une lo local y lo global en perfecta armonía.<br>
+  Viste una moda que trasciende límites y despierta emociones, marcando el camino hacia un futuro lleno de posibilidades.
+</p>
+
+<!-- Botón para regresar a Diario -->
+     <div style="text-align: left; margin-top: 2rem;">
+  <button 
+    @click="entradaActual = null" 
+    class="btn-outline"
+    style="padding: 0.75rem 1.5rem; border: 2px solid black; background: transparent; color: black; font-family: 'Playfair Display', serif; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 1rem;">
+    Regresar a Diario
+  </button>
+     </div>
+     </div>
+     </div>
+<!-- Vista Diario Detallada para "Sostenibilidad" -->
+     <div v-else-if="entradas[entradaActual].titulo === 'Sostenibilidad'">
+<!-- Título centrado -->
+<h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">
+{{ entradas[entradaActual].titulo }}
+</h1>
+
+<!-- Contenedor Flex: imagen y primera mitad del texto -->
+     <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; max-width: 1200px; margin: 0 auto;">
+<!-- Columna para la imagen -->
+<div style="flex: 1 1 40%; display: flex; justify-content: center;">
+  <img 
+    :src="entradas[entradaActual].img" 
+    alt="Sostenibilidad"
+    style="width: 100%; max-width: 300px; height: auto; border-radius: 5px;"
+  >
+</div>
+<!-- Columna para la primera mitad del contenido -->
+     <div style="flex: 1 1 50%; min-width: 250px;">
+  <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.8; color: #444; margin-bottom: 1rem;">
+    Descubre un compromiso profundo con la tierra y la vida. Nuestra propuesta sostenible nace 
+    del deseo de honrar la naturaleza y preservar su esencia para futuras generaciones.<br>
+    Cada prenda es un testimonio de responsabilidad ambiental y un homenaje a las técnicas ancestrales.
+    Con cada tejido, conectamos con el pulso de la tierra y sus ciclos eternos,<br>
+    forjando un lazo entre innovación y tradición que reverbera en cada prenda.<br>
+    Es una invitación a vivir la moda con conciencia, a abrazar un estilo de vida que cuida lo indispensable,<br>
+    y a reconocer que la belleza se potencia al preservar nuestro entorno.<br>
+    Cada diseño refleja un compromiso inquebrantable con la sostenibilidad,<br>
+    plasmando en tela el anhelo de un mundo más justo y armonioso.<br>
+    Aquí, la creatividad se entrelaza con el amor por la naturaleza,<br>
+    transformando materiales en arte vivo que celebra la vida.<br>
+  </p>
+     </div>
+     </div>
+<!-- Segundo bloque de contenido que se extiende a lo ancho (con saltos de línea para dividir en 10 líneas) -->
+     <div style="max-width: 800px; margin: 2rem auto 0 auto;">
+<p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.8; color: #444;">
+  Viste con la convicción de transformar el presente en un futuro más ecológico,
+  y descubre en cada detalle la historia de un planeta que inspira cada paso.
+</p>
+
+<!-- Botón para regresar a Diario -->
+<div style="text-align: left; margin-top: 2rem;">
+  <button 
+    @click="entradaActual = null" 
+    class="btn-outline"
+    style="padding: 0.75rem 1.5rem; border: 2px solid black; background: transparent; color: black; font-family: 'Playfair Display', serif; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 1rem;">
+    Regresar a Diario
+  </button>
+</div>
+     </div>
+     </div>
+<!-- Vista para otras entradas (sin cambios) -->
+     <div v-else>
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 1.5rem;">
+      {{ entradas[entradaActual].titulo }}
+    </h1>
+    
+    <div style="display: flex; gap: 2rem; align-items: flex-start; margin-top: 2rem; flex-wrap: wrap;">
+      <img :src="entradas[entradaActual].img" style="width: 35%; border-radius: 5px; margin-bottom: 1rem;">
+      <div style="flex: 1; min-width: 280px;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 1rem; color: #333;">
+          {{ entradas[entradaActual].fecha }}
+        </p>
+        <p style="white-space: pre-wrap; font-size: 1.2rem; line-height: 1.8; color: #444;">
+          {{ entradas[entradaActual].contenido }}
+        </p>
+      </div>
+    </div>
+    
+    <div style="margin-top: 3rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <button @click="entradaAnterior" style="border: none; background: none; font-size: 1.2rem; cursor: pointer; margin: 0.5rem;">
+        ⬅ {{ entradas[entradaAnteriorIndex]?.titulo || '' }}
+      </button>
+      <button @click="entradaActual = null" class="btn-outline" style="margin: 0.5rem;">Regresar a Diario</button>
+      <button @click="entradaSiguiente" style="border: none; background: none; font-size: 1.2rem; cursor: pointer; margin: 0.5rem;">
+        {{ entradas[entradaSiguienteIndex]?.titulo || '' }} ➡
+      </button>
+    </div>
+     </div>
+     </section>
+     </section>
+
+
+
+<!-- SECCION DIARIO (se muestra cuando se selecciona una entrada) -->
+     <section v-if="seccion === 'diario' && entradaActual !== null">
+  <!-- Condicional para la entrada "Producto local" -->
+    <div v-if="entradas[entradaActual].titulo === 'Producto local'">
+      <!-- Título centrado encima de la imagen -->
+      <h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">
+        {{ entradas[entradaActual].titulo }}
+      </h1>
+  
+      <!-- Contenedor Flex para imagen y primera mitad del texto -->
+      <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+        <!-- Columna de la imagen -->
+        <div style="flex: 0 0 40%; display: flex; justify-content: center;">
+          <img 
+            :src="entradas[entradaActual].img" 
+            alt="Producto local"
+            style="width: 100%; max-width: 300px; height: auto; border-radius: 5px;"
+          >
+        </div>
+        <!-- Columna de la primera mitad del texto -->
+        <div style="flex: 1; min-width: 250px;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 1.25rem; line-height: 1.8; color: #444;">
+            <!-- Primera mitad del contenido (ajusta el texto como consideres) -->
+            Descubre la fuerza que nace de lo nuestro. En cada prenda, en cada detalle, celebramos la autenticidad y el talento local. Nuestro producto local es más que una moda: es un homenaje a la creatividad y resiliencia de mujeres que han sabido transformar su entorno en piezas únicas.
+            Cada diseño está pensado para resaltar la belleza natural y la fortaleza interior, invitándote a empoderarte y a sentirte única. Al vestir nuestra ropa, abrazas una filosofía de vida que prioriza la sostenibilidad, la responsabilidad y el apoyo a la producción local. Es el resultado 
+            de un proceso creativo arraigado en la pasión y el compromiso de mujeres emprendedoras que transforman el mundo a través de la moda consciente. Permítete ser parte de este movimiento que celebra la diversidad, la cultura y la innovación, y viste con orgullo, pasión y la certeza de que cada prenda local es un paso hacia un futuro mejor.
+          </p>
+        </div>
+      </div>
+  
+      <!-- Bloque para la segunda mitad del texto, a pantalla completa debajo -->
+      <div style="max-width: 800px; margin: 2rem auto 0 auto;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 1.25rem; line-height: 1.8; color: #444;">
+          <!-- Segunda mitad del contenido (ajusta el texto completo e inspirador que desees) -->
+          Es un tributo a las raíces que nutren nuestra identidad y dan fuerza a cada mujer.<br>
+          Forjada con pasión por artesanas que transforman lo local en auténtico arte.<br>
+          Cada corte, cada textura y cada detalle evoca los paisajes y la calidez de nuestro entorno.<br>
+          Una invitación a reconectar con la esencia de lo natural y vivir con autenticidad.<br>
+          El diseño celebra la fusión entre tradición y modernidad, empoderando a quienes lo visten.<br>
+          Es una manifestación de resiliencia y creatividad, un himno a la diversidad cultural.<br>
+          Con cada prenda, abrazas un estilo consciente y sostenible, reflejo de un futuro mejor.<br>
+          Vístete con orgullo, dejando que tu apariencia cuente una historia de empoderamiento.<br>
+          Porque elegir lo local significa honrar la tierra y impulsar un cambio lleno de posibilidades.
+          </p>
+        </p>
+        
+        <!-- Botón "Regresar a Diario" -->
+        <div style="text-align: left; margin-top: 2rem;">
+          <button 
+            @click="entradaActual = null" 
+            class="btn-outline"
+            style="padding: 0.75rem 1.5rem; border: 2px solid black; background: transparent; color: black; font-family: 'Playfair Display', serif; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 1rem;">
+            Regresar a Diario
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Vista Diario Detallada para "Colección Universal" -->
+    <div v-else-if="entradas[entradaActual].titulo === 'Colección Universal'">
+<!-- Título centrado encima -->
+<h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">
+  {{ entradas[entradaActual].titulo }}
+</h1>
+
+<!-- Contenedor Flex para imagen y contenido inspirador a lado -->
+<div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; max-width: 1200px; margin: 0 auto;">
+  <!-- Columna para la imagen centrada -->
+  <div style="flex: 0 0 40%; display: flex; justify-content: center;">
+    <img 
+      :src="entradas[entradaActual].img" 
+      alt="Colección Universal"
+      style="width: 100%; max-width: 300px; height: auto; border-radius: 5px;"
+    >
+  </div>
+  <!-- Columna para la primera parte del texto inspirador -->
+  <div style="flex: 1 1 50%; min-width: 250px;">
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.8; color: #444; margin-bottom: 1rem;">
+      Descubre la esencia de la moda global a través de Colección Universal.<br>
+      Cada diseño fusiona tradición y modernidad, creando un puente entre culturas.<br>
+      Una invitación a explorar la belleza sin fronteras.En cada prenda se esconde un susurro del viento que recorre los rincones del mundo,<br>
+      una historia de encuentros, de almas que se funden en un abrazo eterno.<br>
+      La luz del amanecer se mezcla con la magia del crepúsculo en cada detalle,<br>
+      tejiendo sueños y pasiones que trascienden el tiempo y el espacio.<br>
+      Cada costura es el lazo de un compromiso sincero con la belleza y la vida,<br>
+      un homenaje a la diversidad y a la fuerza que transforma lo ordinario en extraordinario.<br>
+      Aquí, en esta colección, se celebra la unión de culturas y el arte de reinventarse,<br>
+      invitándote a vestirte con la esencia de un universo en constante renovación.<br>
+      Deja que cada prenda te inspire a descubrir tu historia y a volar con la imaginación.<br>
+      Siente la emoción de un destino que se escribe con cada paso y cada mirada.
+    </p>
+  </div>
+</div>
+
+<!-- Bloque para la segunda parte del texto que se extiende a lo ancho, sin afectar el diseño de "Producto local" -->
+<div style="max-width: 800px; margin: 2rem auto 0 auto;">
+  <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.8; color: #444;">
+    Inspirada en la diversidad del mundo, cada prenda narra una historia única. Detalles minuciosos y materiales selectos celebran la riqueza cultural, rindiendo homenaje a nuestras raíces. Permítete soñar, explorar y descubrir un estilo que une lo local y lo global en perfecta armonía.<br>
+    Viste una moda que trasciende límites y despierta emociones, marcando el camino hacia un futuro lleno de posibilidades.
+  </p>
+  
+  <!-- Botón para regresar a Diario -->
+  <div style="text-align: left; margin-top: 2rem;">
+    <button 
+      @click="entradaActual = null" 
+      class="btn-outline"
+      style="padding: 0.75rem 1.5rem; border: 2px solid black; background: transparent; color: black; font-family: 'Playfair Display', serif; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 1rem;">
+      Regresar a Diario
+    </button>
+  </div>
+</div>
+    </div>
+    <!-- Vista Diario Detallada para "Sostenibilidad" -->
+    <div v-else-if="entradas[entradaActual].titulo === 'Sostenibilidad'">
+<!-- Título centrado -->
+<h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 2rem;">
+  {{ entradas[entradaActual].titulo }}
+</h1>
+
+<!-- Contenedor Flex: imagen y primera mitad del texto -->
+<div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; max-width: 1200px; margin: 0 auto;">
+  <!-- Columna para la imagen -->
+  <div style="flex: 1 1 40%; display: flex; justify-content: center;">
+    <img 
+      :src="entradas[entradaActual].img" 
+      alt="Sostenibilidad"
+      style="width: 100%; max-width: 300px; height: auto; border-radius: 5px;"
+    >
+  </div>
+  <!-- Columna para la primera mitad del contenido -->
+  <div style="flex: 1 1 50%; min-width: 250px;">
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.8; color: #444; margin-bottom: 1rem;">
+      Descubre un compromiso profundo con la tierra y la vida. Nuestra propuesta sostenible nace 
+      del deseo de honrar la naturaleza y preservar su esencia para futuras generaciones.<br>
+      Cada prenda es un testimonio de responsabilidad ambiental y un homenaje a las técnicas ancestrales.
+      Con cada tejido, conectamos con el pulso de la tierra y sus ciclos eternos,<br>
+      forjando un lazo entre innovación y tradición que reverbera en cada prenda.<br>
+      Es una invitación a vivir la moda con conciencia, a abrazar un estilo de vida que cuida lo indispensable,<br>
+      y a reconocer que la belleza se potencia al preservar nuestro entorno.<br>
+      Cada diseño refleja un compromiso inquebrantable con la sostenibilidad,<br>
+      plasmando en tela el anhelo de un mundo más justo y armonioso.<br>
+      Aquí, la creatividad se entrelaza con el amor por la naturaleza,<br>
+      transformando materiales en arte vivo que celebra la vida.<br>
+    </p>
+  </div>
+</div>
+
+<!-- Segundo bloque de contenido que se extiende a lo ancho (con saltos de línea para dividir en 10 líneas) -->
+<div style="max-width: 800px; margin: 2rem auto 0 auto;">
+  <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; line-height: 1.8; color: #444;">
+    Viste con la convicción de transformar el presente en un futuro más ecológico,
+    y descubre en cada detalle la historia de un planeta que inspira cada paso.
+  </p>
+  
+  <!-- Botón para regresar a Diario -->
+  <div style="text-align: left; margin-top: 2rem;">
+    <button 
+      @click="entradaActual = null" 
+      class="btn-outline"
+      style="padding: 0.75rem 1.5rem; border: 2px solid black; background: transparent; color: black; font-family: 'Playfair Display', serif; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 1rem;">
+      Regresar a Diario
+    </button>
+  </div>
+</div>
+    </div>
+   <!-- Vista para otras entradas (sin cambios) -->
+    <div v-else>
+      <h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 1.5rem;">
+        {{ entradas[entradaActual].titulo }}
+      </h1>
+      
+      <div style="display: flex; gap: 2rem; align-items: flex-start; margin-top: 2rem; flex-wrap: wrap;">
+        <img :src="entradas[entradaActual].img" style="width: 35%; border-radius: 5px; margin-bottom: 1rem;">
+        <div style="flex: 1; min-width: 280px;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 1rem; color: #333;">
+            {{ entradas[entradaActual].fecha }}
+          </p>
+          <p style="white-space: pre-wrap; font-size: 1.2rem; line-height: 1.8; color: #444;">
+            {{ entradas[entradaActual].contenido }}
+          </p>
+        </div>
+      </div>
+      
+      <div style="margin-top: 3rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+        <button @click="entradaAnterior" style="border: none; background: none; font-size: 1.2rem; cursor: pointer; margin: 0.5rem;">
+          ⬅ {{ entradas[entradaAnteriorIndex]?.titulo || '' }}
+        </button>
+        <button @click="entradaActual = null" class="btn-outline" style="margin: 0.5rem;">Regresar a Diario</button>
+        <button @click="entradaSiguiente" style="border: none; background: none; font-size: 1.2rem; cursor: pointer; margin: 0.5rem;">
+          {{ entradas[entradaSiguienteIndex]?.titulo || '' }} ➡
+        </button>
+      </div>
+    </div>
+     </section>
+
+
+
+<!-- SECCION ACERCA DE -->
+     <section v-if="seccion === 'acerca'" class="pagina-acerca">
+  <h2 class="titulo-acerca">Nuestro Enfoque</h2>
+
+  <!-- Diario Preview -->
+  <div class="diario-preview">
+    <div 
+      v-for="(entrada, index) in entradas.slice(0, 2)" 
+      :key="index" 
+      class="entrada-preview" 
+      @click="verEntradaDesdeAcerca(index)">
+      
+      <img :src="entrada.img" class="entrada-imagen">
+      <p class="entrada-titulo">{{ entrada.titulo }}</p>
+    </div>
+  </div>
+
+  <!-- Tienda Preview -->
+  <h2 class="titulo-acerca tienda-titulo">Comprar ahora</h2>
+  <div class="tienda-preview">
+    <div 
+      v-for="n in 3" 
+      :key="'preview-producto-'+n" 
+      class="producto" 
+      @click="goToTienda">
+      
+      <img src="https://i.pinimg.com/736x/93/e8/2d/93e82d57e56ce021f408fce6078015c7.jpg" class="producto-imagen">
+      <p class="producto-titulo">Producto {{ n }}<br>{{ 40 + (n-1)*5 }},00 €</p>
+    </div>
+  </div>
+     </section>
+
+
+
+
+<!-- SECCION CONTACTO -->
+     <section v-if="seccion === 'contacto'" class="pagina-contacto">
+  <div class="contenedor-contacto">
+    
+    <!-- Título -->
+    <div class="contacto-titulo">
+      <h2>Contacto</h2>
+    </div>
+
+    <!-- Contenido de contacto -->
+    <div class="contacto-contenido">
+      <p>Para cualquier consulta de clientes o de ventas, contacta con:</p>
+
+      <p><strong>Atención al cliente</strong><br>
+        <a href="mailto:cliente@fwrosas.com" class="contacto-link">cliente@fwrosas.com</a>
+      </p>
+
+      <p><strong>Consultas por ventas mayoristas</strong><br>
+        <a href="mailto:ventas@fwrosas.com" class="contacto-link">ventas@fwrosas.com</a>
+      </p>
+
+      <p><strong>Consultas de prensa</strong><br>
+        <a href="mailto:prensa@fwrosas.com" class="contacto-link">prensa@fwrosas.com</a>
+      </p>
+
+      <p class="siguenos">Síguenos</p>
+      <div class="contacto-redes">
+        <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+      </div>
+    </div>
+
+  </div>
+     </section>
+
+
+
+
+<!-- SECCION ENVIOS -->
+     <section v-if="seccion === 'envios'" class="pagina-envios">
+  <h2 class="titulo-envios">Envío</h2>
+
+  <div class="envios-contenido">
+    <p class="subtitulo">Envíos nacionales en los Estados Unidos</p>
+    <p>Todo empieza con una idea. Tal vez quieras comenzar un negocio o convertir un pasatiempo en algo más. O bien, es posible que tengas un proyecto creativo para compartir con el mundo. Sea lo que sea, la manera en la que cuentes tu historia online puede marcar la diferencia.</p>
+
+    <br>
+
+    <p class="subtitulo">Envíos internacionales</p>
+    <p>Sé claro, ten confianza y no lo pienses demasiado. La belleza de tu historia es que continuará evolucionando y tu sitio evolucionará con ella. Tu meta debe ser que sea correcto para el momento. Más tarde, funcionará solo. Siempre es así.</p>
+  </div>
+
+  <hr class="divisor-envios">
+
+  <h2 class="titulo-envios">Devoluciones</h2>
+
+  <div class="envios-contenido">
+    <p class="subtitulo">Gastos de devolución</p>
+    <p>Sé claro, ten confianza y no lo pienses demasiado. La belleza de tu historia es que continuará evolucionando y tu sitio evolucionará con ella.</p>
+
+    <br>
+
+    <p class="subtitulo">30 días para devoluciones</p>
+    <p>Tu meta debe ser que sea correcto para el momento. Más tarde, funcionará solo. Siempre es así. Si vuelves a leer las palabras y no oyes tu propia voz en la mente, es una señal de que aún tienes mucho trabajo por hacer.</p>
+
+    <br>
+
+    <p class="subtitulo">Cambios y devoluciones</p>
+    <p>Todo empieza con una idea. Tal vez quieras comenzar un negocio o convertir un pasatiempo en algo más. Sea lo que sea, la manera en la que cuentes tu historia online puede marcar la diferencia.</p>
+  </div>
+     </section>
+
+
+
+<!-- Sección Distribuidores con países de Latinoamérica -->
+     <section v-if="seccion === 'distribuidores'" class="pagina-distribuidores">
+  <h2 class="titulo-distribuidores">DISTRIBUIDORES</h2>
+
+  <div class="grid-distribuidores">
+    <div 
+      v-for="(dist, i) in distribuidores" 
+      :key="i" 
+      class="card-distribuidor">
+      
+      <h3>{{ dist.ciudad }}</h3>
+      <p>{{ dist.nombre }}</p>
+      <p>{{ dist.direccion }}</p>
+      <hr class="linea-divisoria">
+    </div>
+  </div>
+     </section>
+
+
+
+
+<!-- Vista del Carrito de Compras -->
+     <section v-if="seccion === 'carrito'" class="pagina-carrito">
+  <h2 class="titulo-carrito">Tu Carrito</h2>
+
+  <div v-if="cart.length === 0" class="carrito-vacio">
+    <p>Tu carrito está vacío.</p>
+  </div>
+
+  <div v-else>
+    <ul class="lista-carrito">
+      <li 
+        v-for="(item, index) in cart" 
+        :key="index" 
+        class="item-carrito">
+        
+        <div>
+          <strong>{{ item.nombre || item.titulo }}</strong> - {{ item.precio || 'Precio no definido' }} €
+        </div>
+        <button @click="removeFromCart(index)" class="btn-outline">Eliminar</button>
+      </li>
+    </ul>
+
+    <div class="carrito-boton-pago">
+      <button @click="seccion = 'checkout'" class="btn-outline">Proceder al Pago</button>
+    </div>
+  </div>
+     </section>
+
+
+
+
+<!-- Vista de Checkout -->
+     <section v-if="seccion === 'checkout'" class="checkout-section">
+  <h2 class="checkout-title">Checkout</h2>
+
+  <div class="cart-summary">
+    <h3>Resumen del Carrito:</h3>
+    <ul>
+      <li v-for="(item, index) in cart" :key="index">
+        <strong>{{ item.nombre || item.titulo }}</strong> - {{ item.precio || 'Precio no definido' }} €
+      </li>
+    </ul>
+    <h3>Métodos de Pago</h3>
+    <div class="payment-methods">
+      <button class="btn-outline" @click="metodoPago = 'tarjeta'">Tarjeta de Crédito/Débito</button>
+      <button class="btn-outline" @click="metodoPago = 'paypal'">PayPal</button>
+      <button class="btn-outline" @click="metodoPago = 'transferencia'">Transferencia Bancaria</button>
+    </div>
+  </div>
+
+  <div v-if="metodoPago" class="checkout-form-container">
+    <h3>¿A dónde deberíamos enviar tu pedido?</h3>
+    <form class="checkout-form">
+      <div class="form-row">
+        <input type="text" placeholder="Nombre" required>
+        <input type="text" placeholder="Apellido" required>
+      </div>
+      <input type="text" placeholder="Dirección (Calle y Número)" required>
+      <div class="form-row">
+        <input type="text" placeholder="Depto, suite, código de acceso (opc.)">
+        <input type="text" placeholder="Colonia" required>
+        <input type="text" placeholder="Ciudad" required>
+      </div>
+      <div class="form-row">
+        <select required>
+          <option disabled selected>Estado</option>
+          <option>CDMX</option>
+          <option>Jalisco</option>
+          <option>Nuevo León</option>
+        </select>
+        <input type="text" placeholder="Código Postal" required>
+      </div>
+      <input type="text" placeholder="País / Región" value="México" disabled>
+
+      <label class="checkbox-label">
+        <input type="checkbox"> Esta es una dirección de empresa
+      </label>
+
+      <h3>¿Cuál es tu información de contacto?</h3>
+      <div class="form-row">
+        <input type="email" placeholder="Correo electrónico" required>
+        <input type="tel" placeholder="Número de celular" required>
+      </div>
+      <label class="checkbox-label">
+        <input type="checkbox"> No tengo número de celular.
+      </label>
+
+      <button class="submit-button" @click.prevent="seccion = 'pago'">Continuar con el pago</button>
+    </form>
+  </div>
+
+  <div class="checkout-finish">
+    <button @click="changeSection('inicio')" class="btn-outline">Finalizar Compra</button>
+  </div>
+     </section>
+
+
+<!-- SECCIÓN: Pago -->
+     <section v-if="seccion === 'pago'" class="pago-section">
+  <div class="pago-layout">
+    
+    <!-- Columna izquierda: Formulario de pago -->
+    <div class="pago-container">
+      <h2>PAGO</h2>
+      <p>Todas las transacciones son seguras y están encriptadas.</p>
+
+      <div class="payment-box">
+        <label><strong>Credit or Debit Card</strong></label>
+        <div class="card-icons">💳💳💳</div>
+        <input type="text" placeholder="Card number">
+        <input type="text" placeholder="Expiration date (MM / YY)">
+        <input type="text" placeholder="Security code">
+        <input type="text" placeholder="Name on card">
+        <label><input type="checkbox" checked> Usar dirección de envío como dirección de facturación</label>
+        <button class="btn-outline">Más opciones de pago</button>
+      </div>
+
+      <div class="remember-box">
+        <label><input type="checkbox" checked> Guardar mi información para una compra más rápida</label>
+        <input type="tel" placeholder="Número de teléfono">
+      </div>
+
+      <button class="submit-button">Pagar ahora</button>
+    </div>
+
+    <!-- Columna derecha: Resumen del pedido -->
+    <aside class="resumen-container">
+      <div class="item-info" v-for="(item, index) in cart" :key="index">
+        <img :src="item.img" alt="producto" class="item-img">
+        <div class="item-details">
+          <p><strong>{{ item.nombre || item.titulo }}</strong></p>
+          <p>{{ item.precio }} €</p>
+        </div>
+      </div>
+
+      <input type="text" placeholder="Código de descuento">
+      <button class="btn-outline">Aplicar</button>
+
+      <div class="protection-box">
+        <h4>Protección de Envío</h4>
+        <p><strong>MX$77.00</strong></p>
+        <ul>
+          <li>Cobertura por pérdida, robo o daño</li>
+          <li>Reembolso o reemplazo fácil</li>
+          <li>Soporte 24/7</li>
+        </ul>
+        <button class="submit-button">Agregar Protección</button>
+      </div>
+
+      <div class="total-box">
+        <p>Subtotal: {{ calcularSubtotal() }} €</p>
+        <p>Envío: Introduce dirección</p>
+        <h3>Total: {{ calcularSubtotal() }} €</h3>
+      </div>
+
+      <div class="legal-box">
+        <p>Incluye impuestos y tasas. Garantizamos que no habrá cargos adicionales al recibir el pedido.</p>
+      </div>
+    </aside>
+
+  </div>
+     </section>
+
+
+
+<!-- SECCION PIE DE PAGINA -->
+     <div class="footer-5">
+      
+<!-- Título a la izquierda -->
+     <div class="footer-left">
+      <span class="footer-logo-text" @click="seccion = 'inicio'">FW ROSAS</span> 
+     </div>
+<!-- Enlaces a la derecha -->
+     <div class="footer-right">
+    <div class="footer-column">
+      <a @click="seccion = 'tienda'">Tienda</a>
+      <a @click="changeSection('acerca')">acerca de </a>
+      <a @click="seccion = 'contacto'">Contacto</a>
+    </div>
+    <div class="footer-column">
+      <a href="#" @click.prevent="seccion = 'envios'">Envío y devoluciones</a>
+      <a href="#" @click.prevent="seccion = 'distribuidores'">Distribuidores</a>
+    </div>
+    <div class="footer-column">
+      <a href="https://www.instagram.com/?flo=true">Instagram</a>
+      <a href="https://mx.pinterest.com/">Pinterest</a>
+      <a @click="changeSection('diario')">Diario</a>
+      <a href="#" @click.prevent="seccion = 'chatbot'">Chat</a>
+
+    </div>
+     </div>
+
+     </div>
+
+    
+     <section v-if="seccion === 'chatbot'" class="pagina-chatbot">
+      <h2>Asesora Virtual - Rosas</h2>
+      <div class="chat-container">
+        <textarea v-model="mensajeUsuario" placeholder="¿En qué puedo ayudarte hoy?"></textarea>
+        <button @click="enviarMensaje">Enviar</button>
+        <div class="mensajes-chat">
+          <div v-for="(msg, index) in mensajes" :key="index" :class="msg.rol">
+            <p>{{ msg.texto }}</p>
+          </div>
+        </div>      </div>
+    </section>
+    
+    
+</div>    
+</body>
+</html>
+ 

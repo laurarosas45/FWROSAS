@@ -1,0 +1,1056 @@
+/*primero toda la pagina algo estandar*/
+body{ /*aca se escribe todo el estilo de la pagina / de una u otra manera es FORMATEAR eel body */ 
+    margin: 0;  /* es el margin que le da espacio afuera del contenedor / en este caso todo el body en general*/
+    font-family: 'inter', sans-serif; /* es la fuente del body / y la funcion dentro de este codigo es el que le da la fuente de letra al body*/
+    background-color: rgba(246, 243, 239, 0.8); /* es el fondo de la pagina / la funcion del codigo es darle color de fondo al body*/
+}
+html {
+  scroll-behavior: smooth; /* esto le da scroll a la pafina/ la funcion que cumple en este codigo es el que le da SCROLL a la pagina*/
+}
+
+ /*el header que es por donde inicia el body */
+
+header{ /*el header es donde van los iconos principales o e encabezado de la pagina como tags titulo iconos etc */
+    display: flex; /*el display flex es utilizado para colocar los elementos uno al lado del otro/ en este caso los iconos en el header*/
+    justify-content: space-between; /* en general el justify content con la propiedad + space between es el que le da espacio entre los elementos */
+    align-items: center; /* el align items usando la propiedad "center" centra verticalmente los elementos*/
+    padding: 0rem 2rem; /* el padding da espacio dentro de la caja  osea margen dentro dee la caja o div */
+}
+.iconos{
+    display: flex; /*el display con la propiedad flex es utilizado para colocar los elementos uno al lado del otro*/
+    gap: 1rem; /*el gao le da espacio entre los elementos*/
+
+}
+.iconos a{
+    color: rgb(12, 11, 11);
+    font-size: medium;
+    text-decoration: none;/*es es para quitarle el subrayado a los enlaces */
+}
+h1{
+    font-family: 'playfair display', serif;
+    font-size: 2rem;
+    text-align: center;
+}
+#carrito{
+    font-size: medium ;
+    color: black;
+    text-decoration: none;
+}
+
+/*tercero el menu que es la siguiente caja o agrupacion*/
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0.5rem 0 2rem 0;
+  font-family: 'Playfair Display', serif;
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
+    font-size: normal;
+    font-family: 'playfair display', serif;
+    font-weight: bold;
+
+}
+.menu a:hover{
+    transform: matrix3d(); /*transform con la propiedad "matrix3d" esto le da animación al men u al pasar el cursorr por encima*/
+    cursor: pointer; /*cursor con la propiedad "pointer" esto le da la manita al pasarr el cursor por encima*/
+}
+
+/*  la seccion principal que es el main que es porconsiguiente lo  que sigue en la lineas del body */ 
+
+.main{ /*se estandiraza el div con esta clase luego se desglosa cada cosa que hay dentro de el div*/
+    display: flex;
+    justify-content: center; /*este es para alinear la imagen*/ /*ESCRIBIR EN MIS NOTAS*/
+    align-items: center; /*este para alinear todos los elementos*/
+    padding: 2rem 0;
+}
+#main-button{
+    cursor: pointer;
+
+}
+.hero{
+    width: 90%;
+    max-width: 1300px; /*es para darle el tamańo maximo a la imagen en general */ /*ESCRIBIR EN MIS NOTAS */
+    position: relative; /*position con la propiedadrelative es para pocicionar el texto encima de la imagen  */ /*ESCRIBIR EN MIS NOTAS*/
+    overflow: hidden; /* oculta cualquier cosa fuera del area */ /*ESCRIBIR EN MIS NOTAS*/
+    border-radius: 3px;
+}
+.hero img{
+    width: 100%;
+    height: 640px;
+    display: block; /*para que se vea la imagen */ /*ESCRIBIR EN MIS NOTAS*/
+    margin-top: -40px;
+}
+.texto-sobre-imagen{
+    position: absolute; /*esto coloca el texto sobre la imagen */ /*ESCERIBIR EN MIS NOTAS */
+    top: 60%;
+    left: 5%;
+    color: aliceblue;
+    transform: translateY(-50%); /*ajuste fino en la aposicion vertical*/ /*ESCRIBIR EN MIS NOTAS*/
+
+}
+.texto-sobre-imagen h4{
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase; /* es para mayusculas*/ /*ESCRIBIR ESTO EN MIS NOTAS*/
+    margin: 0;
+    font-family: 'playfair display', serif; 
+}
+.texto-sobre-imagen h2{
+    color: aliceblue;
+    font-weight: 400;
+    font-family: 'playfair display', serif;
+    margin: 0.5rem 0;
+}
+.texto-sobre-imagen a{
+    text-decoration: underline;
+    color: aliceblue;
+    font-family: 'playfair display', serif;
+    font-weight: 400;
+}
+/*envios*/
+.pagina-envios {
+  background-color: #f6f3ef;
+  padding: 4rem 2rem;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+
+.titulo-envios {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.envios-contenido {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.subtitulo {
+  font-weight: bold;
+}
+
+.divisor-envios {
+  margin: 4rem auto;
+  width: 30%;
+  border: none;
+  border-top: 1px solid #aaa;
+}
+
+/*pagina de distribuidores */
+.pagina-distribuidores {
+  background-color: #f6f3ef;
+  padding: 4rem 2rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.titulo-distribuidores {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+.grid-distribuidores {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card-distribuidor {
+  text-align: center;
+}
+
+.linea-divisoria {
+  margin-top: 1rem;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  border-top: 1px solid #333;
+}
+/* Vista del Carrito de Compras */
+.pagina-carrito {
+  padding: 2rem;
+  background-color: #f6f3ef;
+}
+
+.titulo-carrito {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+
+.carrito-vacio {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.lista-carrito {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+.carrito-boton-pago {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Botón reutilizable */
+.btn-outline {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: #333;
+  color: white;
+}
+
+
+/*contacto*/
+.pagina-contacto {
+  background-color: #f6f3ef;
+  padding: 4rem 2rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.contenedor-contacto {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.contacto-titulo {
+  flex: 1;
+  min-width: 200px;
+}
+
+.contacto-titulo h2 {
+  font-size: 2rem;
+}
+
+.contacto-contenido {
+  flex: 2;
+  min-width: 300px;
+}
+
+.contacto-link {
+  text-decoration: underline;
+  color: black;
+}
+
+.siguenos {
+  margin-top: 2rem;
+}
+
+.contacto-redes {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+
+/*acerca de*/
+.pagina-acerca {
+  padding: 4rem 2rem;
+  background-color: #eee;
+}
+
+.titulo-acerca {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.diario-preview,
+.tienda-preview {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.entrada-preview {
+  cursor: pointer;
+}
+
+.entrada-imagen {
+  width: 250px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.entrada-titulo {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.tienda-titulo {
+  margin-top: 4rem;
+}
+
+.producto-imagen {
+  width: 200px;
+  height: auto;
+}
+
+.producto-titulo {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+
+/*por ultimo ponemos aca la media que es lo que hace que la pagina seea responsive osea QUE SE AJUSTE AL TAMAÑO DE LAS PATAÑAS Y CONSERVE EL DISEÑO*/
+  
+  @media (max-width: 768px) {
+    .hero-2 {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: auto;
+      padding: 2rem 1rem;
+    }
+  
+    .texto-sobre-imagen-2 {
+      max-width: 90%;
+      text-align: center;
+      margin-left: 0;
+      padding-top: 1rem;
+    }
+  
+    .imagen-flotante {
+      margin: 2rem 0;
+    }
+  
+    .newsletter-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .newsletter-text,
+    .input-subs {
+      max-width: 100%;
+      width: 100%;
+    }
+  
+    .input-subs {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .input-subs input[type="email"] {
+      width: 80%;
+    }
+  
+    .input-subs button {
+      width: 60%;
+    }
+  
+    .imagenes-section2 {
+      grid-template-columns: repeat(1, 1fr);
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  
+    .imagenes-section5 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .section-3 {
+      flex-direction: column;
+      padding: 3rem 1rem;
+    }
+  
+    #texto-button3 {
+      align-items: center;
+      text-align: center;
+      padding-left: 0;
+    }
+  
+    .imagenes-section-3 {
+      flex-direction: column;
+      align-items: center;
+      padding-right: 0;
+    }
+  }
+    
+/*section 2*/
+
+.section-2{
+    background-color:rgba(230, 219, 204, 0.332);
+    text-align: center;
+}
+.texto-bottun p{
+    text-align: center;
+    font-family: 'playfair display',serif;
+    margin-top: 30px;
+    text-wrap: wrap; /*permite que los parrafos se acomoden si se cambia el tamaño de pantalla*/ /* ESCRIBIR EN MIS NOTAS */
+    padding-top: 100px;
+}
+.texto-bottun a{
+    text-decoration: none;
+    color: black;
+    font-family: 'playfair display', serif;
+    font-weight: bold;
+    font-size: medium;
+}
+.btn-outline{
+    display: inline-block;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding: 1rem;
+    border: 2px solid #000;
+    margin-top: 1em;
+    cursor: pointer;
+    right: 8rem;
+
+}
+.imagenes-section2 {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  padding-top: 4rem;        /* antes 10rem */
+  padding-bottom: 4rem;     /* antes 10rem */
+  padding-left: 5rem;       /* mueve las imágenes más a la izquierda */
+}
+
+.imagenes-section2 img{
+    width: 20rem;
+    height: 28rem;
+}
+
+/* Sección 3 */
+.section-3 {
+  background-color: rgba(230, 219, 204, 0.234);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem; /* ✅ Padding más ligero */
+}
+
+
+/* Contenedor del texto */
+#texto-button3 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ Ahora centrado horizontal */
+  justify-content: center;
+  padding: 1rem; /* ✅ Padding moderado */
+  text-align: center; /* ✅ Asegura que el texto esté centrado */
+}
+
+
+/* Opcional: estilo para el texto */
+#texto-button3 h2 {
+font-size: 1.5em;
+margin-bottom: -1rem;
+}
+
+/* Botón con contorno, puedes personalizarlo más si quieres */
+.btn-outline {
+padding: 0.75rem 1.5rem;
+border: 2px solid black;
+background: transparent;
+color: black;
+text-decoration: none;
+font-weight: bold;
+border-radius: 5px;
+transition: background 0.3s ease;
+align-self: center; /* ✅ Esto centra el botón dentro del contenedor */
+
+}
+
+.btn-outline:hover {
+background: black;
+color: white;
+}
+
+/* Contenedor de imágenes: se mantiene como estaba */
+.imagenes-section-3 {
+display: flex;
+gap: 1rem; /* Espacio entre las imágenes */
+padding-right: 2rem; /* Separación del borde derecho */
+}
+
+/* Estilo de las imágenes: tamaño fijo */
+.imagenes-section-3 img {
+width: 20rem;
+height: 28rem;
+object-fit: cover; /* Asegura que las imágenes llenen el espacio sin deformarse */
+}
+
+/*seccion #4*/
+
+.section-4 {
+width: 100%;
+height: 100vh;
+position: relative;
+}
+
+.hero-2 {
+background-image: url("https://i.pinimg.com/736x/0b/33/39/0b3339a2000cd5e552ecdba3522b6430.jpg");
+background-size: cover; /* para que cubra todo */
+background-position: center;
+height: 80%;
+position: relative; /* ayuda a posicionar el texto sobree la imagen*/ /*ESCRIBIR EN MIS NOTAS */
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 2rem;
+}
+
+/* Texto sobre la imagen */
+.texto-sobre-imagen-2 {
+color: black;
+max-width: 30%;
+margin-left: 1rem;
+padding-top: 7rem;
+}
+
+.texto-sobre-imagen-2 h2 {
+font-size: 2.5rem;
+font-weight: 500;
+margin-bottom: 1rem;
+}
+
+.texto-sobre-imagen-2 p {
+font-size: 1rem;
+margin-bottom: 1.5rem;
+line-height: 1.6;
+}
+
+/* Imagen flotante a la derecha */
+.imagen-flotante {
+position: relative;
+margin-right: 3rem;
+text-align: center;
+}
+
+.imagen-flotante img {
+width: 200px;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.descripcion {
+color: white;
+margin-top: 1rem;
+font-size: 0.9rem;
+line-height: 1.4;
+}
+
+/* seccion 5 */
+
+.sectio-5{
+padding: 2rem; /* espacion de al rededor de  toda la section 5 */
+}
+
+.newsletter-container{ /* siempre se debe de tomarr uno a uno de lo que queremos arreglar, como este es como el que envuelve todo se debe de estandarizar y luego si desglosar uno a uno de las tags que hay dentro */
+display: flex; /* activamos el flexbox para distribuir sus elemeentos en linea */
+justify-content: space-between; /* junto con display:flex activamos los expacios entre los elementos, Distribuye el espacio: texto a la izquierda, formulario a la derecha  */
+align-items: center; /* alinea verticalmente ambos bloques  */
+max-width: 1200px; /* proporciona y limita el ancho maximo al contenedor */
+margin: 0 auto; /* centra el contenedor horizontalmente*/
+padding: 2rem; /*este es el espacio interno alrededor del contenedor */
+background-color:#f6f3ef ;
+}
+
+.newsletter-text{
+max-width: 50%; /* limita el ancho del bloque del texto para la legibilidad */
+text-align: left; /* esto alinea el texto a la izquierda */
+}
+
+.newsletter-text h2{
+font-family: 'playfair display', serif;/* define la fuente del titulo */
+font-size: 1.8rem;
+margin-bottom: 0.5rem;/*es el espacio entre el titulo y el parrafo */
+}
+
+.newsletter-text p{
+font-family: 'playfair display',serif;
+font-size: 1.1rem;
+line-height: 1.5; /* es el que le da espacio entre las lineas del parrafo */
+margin: 0;
+}
+
+.input-subs {
+display: flex; /* activa el flexbox para organizar el input y el boton en linea */
+gap: 1rem; /* da espacio entre el los elementos en este caso entre el input y el boton del correo electronico */
+align-items: center; /* esto alinea los elementos verticalmente en este caso es el input y el boton */
+}
+
+.input-subs input[type="email"]{
+padding: 1rem; /* es el margen interno de la caja */
+border: 1rem; /* es el borde gris claro para delimitar el border del input */
+font-family: 'inter',sans-serif;
+width: 300px; /* este lo que hace es definir el ancho de la caja del input*/
+border-radius: 5px;/* le da ala caja del input borders redondeados*/
+font-size: 1rem;
+}
+.input-subs button{
+padding: 1rem 1.5rem; /* es el margen interno de la caja del boton */
+border: 2px solid black; /* esta es otra forma de poner el border de la caja o contenedor con colorcito y el gruesor que quieras*/
+background: transparent; 
+color: black;
+font-family: 'playfair display',serif;
+font-weight: bold; /* el grosor de la fuente */
+cursor: pointer; /* esto lo que hace esque muestra la manita al pasar el cursor por encima del boton */
+border-radius: 5px; /* redondeada los bordes de la caja */
+font-size: 1rem; 
+}
+
+.input-subs button:hover{
+background-color: black;
+color: white;
+}
+
+.divider{
+border: none;
+border-top: 1px solid #ccc; /*le da color a la linea de separacion osea al hr*/
+margin: 3rem 3rem; /* es el margin afuera d elos elementos ademas de que separa o le da espacion a los elementos*/
+}
+.imagenes-section5 {
+display: grid; /* activamos el grid,y es lo que nos permite organizar o distribuir los elementos en colomnas o filas */
+grid-template-columns: repeat(4, 1fr); /* define primero la cantidad de columnas que serian 4, luego define el tamanño de las columnas que seria 1fr*/
+gap: 1rem; /* define el espacio entre columnas o filas */
+max-width: 1300px; /* limita el ancho maximo al contenedor */
+margin: 1rem auto; 
+}
+
+.imagenes-section5 img {
+width:100%;
+height: auto;
+object-fit: cover; /* esto es para que las imagnes se ajusten al espacio sin deformarse */
+}
+
+.footer-5 {
+background-color: #f6f3ef;
+padding: 3rem 2rem 2rem 2rem;
+font-family: 'playfair display', serif;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: flex-start;
+border-top: 1px solid #ccc;
+}
+
+.footer-left {
+display: flex;
+align-items: center;
+gap: 1rem;
+font-size: 1.5rem;
+font-weight: bold;
+cursor: pointer;
+}
+
+.footer-right {
+display: flex;
+gap: 3rem;
+cursor: pointer;
+}
+
+.footer-column {
+display: flex;
+flex-direction: column;
+gap: 0.5rem;
+}
+
+.footer-column a {
+color: black;
+text-decoration: underline;
+font-size: 0.95rem;
+}
+
+.footer-bottom {
+width: 100%;
+text-align: right;
+margin-top: 2rem;
+font-size: 0.85rem;
+}
+
+.footer-bottom a {
+color: black;
+text-decoration: underline;
+}
+
+#tienda-dinamica {
+background-color: #f6f3ef;
+padding: 2rem;
+text-align: center;
+}
+
+/* Submenú de categorías */
+
+.categorias {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1.5rem;
+border-top: 1px solid #ccc;
+padding: 1.5rem 0 1rem 0;
+font-family: 'Playfair Display', serif;
+font-size: 1rem;
+}
+
+.categorias a {
+text-decoration: none;
+color: black;
+}
+
+.categorias a:not(:last-child)::after {
+content: "|";
+margin-left: 1.5rem;
+color: #aaa;
+}
+
+.categorias a:hover {
+color: #555;
+}
+/* Grid de productos */
+.productos-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2rem;
+margin: 0 auto;
+}
+.producto {
+background-color: #fff;
+padding: 0.5rem;           /* menos espacio interno */
+border-radius: 5px;
+transition: transform 0.3s ease;
+max-width: 230px;          /* más pequeño el producto */
+margin: 0 auto;            /* centra cada tarjeta */
+}
+
+.producto:hover {
+transform: translateY(-3px);
+}
+.producto img {
+width: 100%;
+height: auto;
+object-fit: cover;
+border-radius: 3px;
+}
+.producto h3 {
+font-family: 'playfair display', serif;
+font-size: 1rem;
+margin: 0.5rem 0 0.2rem 0;
+}
+.producto p {
+margin: 0;
+font-size: 0.9rem;
+}
+.envio-gratis {
+margin-top: 2rem;
+font-size: 0.9rem;
+font-family: 'playfair display', serif;
+}
+/* ================================================================
+MEDIA QUERIES
+================================================================= */
+@media (max-width: 800px) {
+.productos-grid {
+grid-template-columns: repeat(1, 1fr);
+}
+footer.footer-5 {
+flex-direction: column;
+}
+}
+
+.checkout-section {
+  padding: 2rem;
+  background-color: #f6f3ef;
+  font-family: 'Inter', sans-serif;
+}
+
+.checkout-title {
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.cart-summary {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cart-summary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-summary li {
+  margin: 0.5rem 0;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 0.5rem;
+}
+
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.checkout-form-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.checkout-form h3 {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-row input,
+.checkout-form input,
+.checkout-form select {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.checkout-form select {
+  background-color: #fff;
+  appearance: none;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.submit-button {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.checkout-finish {
+  text-align: center;
+  margin-top: 2rem;
+}
+.pago-section {
+  padding: 2rem;
+  background-color: #f6f3ef;
+  font-family: 'Inter', sans-serif;
+}
+
+.pago-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.pago-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.payment-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.payment-box input {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.card-icons {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.remember-box {
+  margin-bottom: 1.5rem;
+}
+.pago-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f6f3ef;
+}
+
+.pago-container {
+  flex: 1 1 500px;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.resumen-container {
+  flex: 1 1 350px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+}
+
+.item-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.item-img {
+  width: 60px;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.item-details p {
+  margin: 0;
+}
+
+.protection-box {
+  background: #fdf2f2;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+.total-box {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.legal-box {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.pagina-chatbot {
+  background-color: #fdf0e7;
+  font-family: 'Playfair Display', serif;
+  padding: 3rem 2rem;
+  color: #4e2b1f;
+}
+
+.chat-container {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chat-container textarea {
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d9b8a5;
+  resize: vertical;
+}
+
+.chat-container button {
+  background-color: #a05645;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.chat-container .respuesta {
+  background-color: #fffaf7;
+  padding: 1rem;
+  border-left: 4px solid #a05645;
+  border-radius: 0.5rem;
+  font-style: italic;
+}
+.mensajes-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 0.8rem;
+  border-radius: 1rem 1rem 0 1rem;
+  max-width: 80%;
+}
+
+.bot {
+  align-self: flex-start;
+  background-color: #fffaf7;
+  color: #4e2b1f;
+  padding: 0.8rem;
+  border-radius: 1rem 1rem 1rem 0;
+  max-width: 80%;
+}
