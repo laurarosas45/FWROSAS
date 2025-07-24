@@ -1053,6 +1053,22 @@ font-family: 'playfair display', serif;
     align-items: center;
     padding-right: 0;
   }
+  .imagenes-section2 {
+    display: grid;
+    grid-template-columns: 1fr; /* ✅ una sola columna */
+    gap: 1rem;
+    padding: 1rem;
+    justify-items: center; /* ✅ centra las imágenes */
+  }
+  
+  .imagenes-section2 img {
+    width: 100%;        /* ✅ se ajusta al contenedor */
+    max-width: 90vw;    /* ✅ no se pasa del ancho del dispositivo */
+    height: auto;
+    object-fit: cover;  /* ✅ mantiene proporción */
+    border-radius: 6px;
+  }
+  
 }
 @media (max-width: 800px) {
   .productos-grid {
