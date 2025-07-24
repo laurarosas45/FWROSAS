@@ -324,79 +324,6 @@ h1{
 
 /*por ultimo ponemos aca la media que es lo que hace que la pagina seea responsive osea QUE SE AJUSTE AL TAMAÑO DE LAS PATAÑAS Y CONSERVE EL DISEÑO*/
   
-  @media (max-width: 768px) {
-    .hero-2 {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: auto;
-      padding: 2rem 1rem;
-    }
-  
-    .texto-sobre-imagen-2 {
-      max-width: 90%;
-      text-align: center;
-      margin-left: 0;
-      padding-top: 1rem;
-    }
-  
-    .imagen-flotante {
-      margin: 2rem 0;
-    }
-  
-    .newsletter-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .newsletter-text,
-    .input-subs {
-      max-width: 100%;
-      width: 100%;
-    }
-  
-    .input-subs {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-  
-    .input-subs input[type="email"] {
-      width: 80%;
-    }
-  
-    .input-subs button {
-      width: 60%;
-    }
-  
-    .imagenes-section2 {
-      grid-template-columns: repeat(1, 1fr);
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-  
-    .imagenes-section5 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  
-    .section-3 {
-      flex-direction: column;
-      padding: 3rem 1rem;
-    }
-  
-    #texto-button3 {
-      align-items: center;
-      text-align: center;
-      padding-left: 0;
-    }
-  
-    .imagenes-section-3 {
-      flex-direction: column;
-      align-items: center;
-      padding-right: 0;
-    }
-  }
     
 /*section 2*/
 
@@ -768,17 +695,6 @@ margin-top: 2rem;
 font-size: 0.9rem;
 font-family: 'playfair display', serif;
 }
-/* ================================================================
-MEDIA QUERIES
-================================================================= */
-@media (max-width: 800px) {
-.productos-grid {
-grid-template-columns: repeat(1, 1fr);
-}
-footer.footer-5 {
-flex-direction: column;
-}
-}
 
 .checkout-section {
   padding: 2rem;
@@ -1053,4 +969,129 @@ flex-direction: column;
   padding: 0.8rem;
   border-radius: 1rem 1rem 1rem 0;
   max-width: 80%;
+}
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .hero img {
+    height: auto;
+    margin-top: 0;
+  }
+
+  .texto-sobre-imagen {
+    top: 50%;
+    left: 5%;
+    text-align: center;
+    transform: translateY(-50%);
+  }
+
+  .grid-distribuidores {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .imagenes-section2 {
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .imagenes-section5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .productos-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .newsletter-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .newsletter-text, .input-subs {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .input-subs input[type="email"],
+  .input-subs button {
+    width: 90%;
+  }
+
+  .footer-5 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .pago-layout {
+    flex-direction: column;
+  }
+
+  .texto-sobre-imagen-2 {
+    max-width: 90%;
+    padding-top: 1rem;
+  }
+
+  .imagen-flotante {
+    margin-right: 0;
+    margin-top: 1rem;
+  }
+
+  .imagenes-section-3 {
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0;
+  }
+}
+@media (max-width: 800px) {
+  .productos-grid {
+  grid-template-columns: repeat(1, 1fr);
+  }
+  footer.footer-5 {
+  flex-direction: column;
+  }
+  }
+  
+@media (min-width: 769px) and (max-width: 1024px) {
+  .imagenes-section2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .imagenes-section5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .newsletter-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pago-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
