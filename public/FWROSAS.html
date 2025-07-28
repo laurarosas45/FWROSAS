@@ -650,7 +650,7 @@
 
 <!-- SECCION ACERCA DE -->
      <section v-if="seccion === 'acerca'" class="pagina-acerca">
-  <h2 class="titulo-acerca">Nuestro Enfoque</h2>
+  <h2 class="titulo-acerca">Mi Portafolio</h2>
 
   <!-- Diario Preview -->
   <div class="diario-preview">
@@ -665,19 +665,16 @@
     </div>
   </div>
 
-  <!-- Tienda Preview -->
-  <h2 class="titulo-acerca tienda-titulo">Comprar ahora</h2>
-  <div class="tienda-preview">
-    <div 
-      v-for="n in 3" 
-      :key="'preview-producto-'+n" 
-      class="producto" 
-      @click="goToTienda">
-      
-      <img src="https://i.pinimg.com/736x/93/e8/2d/93e82d57e56ce021f408fce6078015c7.jpg" class="producto-imagen">
-      <p class="producto-titulo">Producto {{ n }}<br>{{ 40 + (n-1)*5 }},00 €</p>
-    </div>
+  <div class="acerca-portafolio">
+    <p>
+      Soy desarrolladora web con enfoque en frontend y backend , apasionada por crear experiencias digitales funcionales, creativas y con propósito. 
+      En mi portafolio encontrarás proyectos que combinan diseño visual, interactividad, autenticidad y herramientas modernas como Vue.js, Node.js y APIs externas. 
+      Si quieres conocer más sobre mi trabajo o colaborar en un proyecto, no dudes en escribirme. Estaré encantada de conversar contigo.
+    </p>
+    <a href="mailto:laura.rosas.durrani@gmail.com,rosas4087564@gmail.com?subject=Quiero%20contactarte%20por%20tu%20portafolio" class="btn-contacto">Contáctame</a>
   </div>
+  
+
      </section>
 
 

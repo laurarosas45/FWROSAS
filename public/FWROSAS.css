@@ -1111,3 +1111,36 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.acerca-portafolio {
+  margin-top: 2rem;
+  background-color: #fdf4f0;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #5a3b2e;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.acerca-portafolio p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.btn-contacto {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #a73009;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-contacto:hover {
+  background-color: #872600;
+}
+
